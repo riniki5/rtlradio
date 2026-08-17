@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 10;
+  --background-end-rgb: 5, 5, 5;
+  --radio-darker: #0a0a0a;
+  --radio-dark: #1a1a1a;
+  --radio-gray: #2a2a2a;
+  --radio-light: #3a3a3a;
+  --radio-red: #ff0000;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.bg-radio-darker {
+  background-color: var(--radio-darker);
+}
+
+.bg-radio-dark {
+  background-color: var(--radio-dark);
+}
+
+.bg-radio-gray {
+  background-color: var(--radio-gray);
+}
+
+.bg-radio-light {
+  background-color: var(--radio-light);
+}
+
+.text-radio-red {
+  color: var(--radio-red);
+}
+
+.bg-radio-red {
+  background-color: var(--radio-red);
+}
+
+.border-radio-red {
+  border-color: var(--radio-red);
+}
+
+.border-radio-gray {
+  border-color: var(--radio-gray);
+}
+
+.border-radio-light {
+  border-color: var(--radio-light);
+}
+
+.hover\:text-radio-red:hover {
+  color: var(--radio-red);
+}
+
+.hover\:bg-radio-red:hover {
+  background-color: var(--radio-red);
+}
+
+.hover\:bg-radio-light:hover {
+  background-color: var(--radio-light);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
